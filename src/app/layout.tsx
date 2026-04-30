@@ -31,9 +31,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased ${radioCanadaBig.variable}`}
+      lang="pt-br"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased ${radioCanadaBig.variable} bg-black`}
     >
+      <head>
+        <link rel="stylesheet" href="https://googleapis.com" />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

@@ -3,13 +3,15 @@ import { SpotlightButton } from "@/components/ui/SpotLightButton";
 import { GlowButton } from "@/components/ui/GlowButton";
 import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
+import PillButton from "@/components/shared/PillButton";
+import FeatureCard from "@/components/shared/FeatureCard";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white flex flex-col items-center justify-center p-40 ">
-        <div className="flex align items-center">
+      <main className="min-h-screen bg-white flex flex-col items-center justify-center  ">
+        <div className="flex align items-center px-40 min-h-screen">
           <div>
             <div className="max-w-4xl mb-8">
               <SplitText
@@ -41,6 +43,31 @@ export default function Home() {
               alt="MetaValley - Validação de ideias"
               width={800}
               height={500}
+            />
+          </div>
+        </div>
+        <div className="text-center bg-[#131316] w-full mt-20 py-12">
+          <PillButton
+            text="Veja como funciona"
+            fromColor="from-[#ff3131]"
+            toColor="to-[#ff914d]"
+          />
+
+          <div className="flex px-40 mt-12 gap-8 justify-center flex-wrap">
+            <FeatureCard
+              title="Validação Rápida"
+              description="Descubra se sua ideia tem potencial de sucesso em apenas alguns dias."
+              iconName="front_loader"
+            />
+            <FeatureCard
+              title="Validação Rápida"
+              description="Descubra se sua ideia tem potencial de sucesso em apenas alguns dias."
+              iconName="front_loader"
+            />
+            <FeatureCard
+              title="Validação Rápida"
+              description="Descubra se sua ideia tem potencial de sucesso em apenas alguns dias."
+              iconName="front_loader"
             />
           </div>
         </div>
