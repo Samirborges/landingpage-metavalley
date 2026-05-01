@@ -1,6 +1,7 @@
 "use client";
 
 import { Send } from "lucide-react";
+import posthog from "posthog-js";
 import { useState } from "react";
 
 export default function ContactInput() {
@@ -25,7 +26,12 @@ export default function ContactInput() {
         />
 
         <button
-          onClick={handleSend}
+          onClick={() => {
+            handleSend();
+            posthog.capture("conversion", {
+              type: "lead",
+            });
+          }}
           className="p-2 rounded-full hover:bg-gray-200 transition cursor-pointer"
         >
           <Send size={18} className="text-gray-500" />

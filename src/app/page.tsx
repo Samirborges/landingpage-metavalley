@@ -1,3 +1,5 @@
+"use client";
+
 import { SplitText } from "@/components/animations/SplitText";
 import { SpotlightButton } from "@/components/ui/SpotLightButton";
 import { GlowButton } from "@/components/ui/GlowButton";
@@ -8,8 +10,10 @@ import FeatureCard from "@/components/shared/FeatureCard";
 import { Hourglass, BarChart, Compass } from "lucide-react";
 import PricingCard from "@/components/ui/PricingCard";
 import ContactInput from "@/components/shared/ContactInput";
+import { useScrollTracking } from "@/hooks/useScrollTracking";
 
 export default function Home() {
+  useScrollTracking();
   return (
     <>
       <Navbar />
@@ -54,7 +58,7 @@ export default function Home() {
 
         <div className="text-center bg-[#131316] w-full py-12">
           <PillButton
-            text="Veja como funciona"
+            text="O Problema"
             fromColor="from-[#ff3131]"
             toColor="to-[#ff914d]"
           />
@@ -141,6 +145,7 @@ export default function Home() {
                 "Experimentação: 1",
                 "Diagnóstico: 1",
               ]}
+              typePlan="basic"
             />
 
             <PricingCard
@@ -152,6 +157,7 @@ export default function Home() {
                 "Experimentação: 1",
                 "Diagnóstico: 1",
               ]}
+              typePlan="pro"
               highlighted
             />
 
@@ -164,6 +170,7 @@ export default function Home() {
                 "Experimentação: 1",
                 "Diagnóstico: 1",
               ]}
+              typePlan="enterprise"
             />
           </div>
         </div>

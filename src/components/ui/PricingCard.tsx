@@ -1,8 +1,11 @@
+import posthog from "posthog-js";
+
 interface PricingCardProps {
   title: string;
   price: string;
   features: string[];
   highlighted?: boolean; // botão preenchido ou outline
+  typePlan: "basic" | "pro" | "enterprise";
 }
 
 export default function PricingCard({
@@ -10,6 +13,7 @@ export default function PricingCard({
   price,
   features,
   highlighted = false,
+  typePlan,
 }: PricingCardProps) {
   return (
     <div className="flex flex-col gap-6 w-80 max-w-[380px]">
@@ -42,6 +46,12 @@ export default function PricingCard({
               : "bg-transparent text-white border-white hover:bg-white hover:text-black"
           }
         `}
+        onClick={() =>
+          posthog.capture("conversion", {
+            type: "pricing_click",
+            plan: typePlan,
+          })
+        }
       >
         Começar agora
       </button>
