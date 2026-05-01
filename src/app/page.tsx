@@ -5,6 +5,9 @@ import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
 import PillButton from "@/components/shared/PillButton";
 import FeatureCard from "@/components/shared/FeatureCard";
+import { Hourglass, BarChart, Compass } from "lucide-react";
+import PricingCard from "@/components/ui/PricingCard";
+import ContactInput from "@/components/shared/ContactInput";
 
 export default function Home() {
   return (
@@ -46,31 +49,130 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="text-center bg-[#131316] w-full mt-20 py-12">
+
+        {/* Descrição do problema */}
+
+        <div className="text-center bg-[#131316] w-full py-12">
           <PillButton
             text="Veja como funciona"
             fromColor="from-[#ff3131]"
             toColor="to-[#ff914d]"
           />
 
-          <div className="flex px-40 mt-12 gap-8 justify-center flex-wrap">
+          <div className="flex px-10 mt-12 gap-8 justify-center flex-wrap mb-12">
             <FeatureCard
-              title="Validação Rápida"
-              description="Descubra se sua ideia tem potencial de sucesso em apenas alguns dias."
-              iconName="front_loader"
+              title="Perdeu meses construindo algo inútil"
+              description="Sem realizar uma análise detalhada do mercado você criou produtos não são capazes de gerar receita."
+              icon={Hourglass}
+              iconColor="#ff3131"
             />
             <FeatureCard
-              title="Validação Rápida"
-              description="Descubra se sua ideia tem potencial de sucesso em apenas alguns dias."
-              iconName="front_loader"
+              title="Não soube interpretar dados para tomada de decisão"
+              description="Ao visualizar métricas de suas campanhas, você não soube definir qual era o problema da sua proposta de valor?"
+              icon={BarChart}
+              iconColor="#ff3131"
             />
             <FeatureCard
-              title="Validação Rápida"
-              description="Descubra se sua ideia tem potencial de sucesso em apenas alguns dias."
-              iconName="front_loader"
+              title="Não sabe qual próximo passo dar no seu negócio"
+              description="Você não sabe qual a melhor decisão tomar para que seu negócio comece a ter prospecção de clientes"
+              icon={Compass}
+              iconColor="#ff3131"
+            />
+          </div>
+
+          {/* Descrição da solução */}
+
+          <PillButton
+            text="Sua Solução"
+            fromColor="from-[#5de0e6]"
+            toColor="to-[#004aad]"
+          />
+
+          <h3 className="mt-12 mb-12 font-radio text-xl sm:text-2xl font-bold px-6 sm:px-12 md:px-32 lg:px-60">
+            Transformamos sua ideia em um experimento real, coleta dados de
+            comportamento e te entrega um diagnóstico claro para tomar decisão.
+          </h3>
+
+          {/* Descrição de como funciona */}
+
+          <PillButton
+            text="Como Funciona"
+            fromColor="from-[#5de0e6]"
+            toColor="to-[#ccff00]"
+          />
+
+          <div className="flex px-10 gap-8 justify-center flex-wrap mt-12 mb-12">
+            <FeatureCard
+              title="Você define a sua ideia e estruturamos ela"
+              description="Estruturamos sua hipótese de forma clara e testável."
+              icon={Hourglass}
+              iconColor="#d7ff1b"
+              colorBorder="border-[#d7ff1b]"
+            />
+            <FeatureCard
+              title="Rodamos um experimento real da sua ideia"
+              description="Criamos uma página e validamos com pessoas reais."
+              icon={BarChart}
+              iconColor="#d7ff1b"
+              colorBorder="border-[#d7ff1b]"
+            />
+            <FeatureCard
+              title="Você recebe o diagnóstico sobre a sua proposta"
+              description="Mostramos onde você está errado e o que fazer a seguir."
+              icon={Compass}
+              iconColor="#d7ff1b"
+              colorBorder="border-[#d7ff1b]"
+            />
+          </div>
+
+          <PillButton
+            text="Planos"
+            fromColor="from-[#5de0e6]"
+            toColor="to-[#ccff00]"
+          />
+
+          <div className="flex px-10 gap-8 justify-center flex-wrap mt-12">
+            <PricingCard
+              title="Plano Básico"
+              price="R$50,00"
+              features={[
+                "Startups: 1",
+                "Produtos por Startup: 1",
+                "Experimentação: 1",
+                "Diagnóstico: 1",
+              ]}
+            />
+
+            <PricingCard
+              title="Plano Pro"
+              price="R$50,00"
+              features={[
+                "Startups: 1",
+                "Produtos por Startup: 1",
+                "Experimentação: 1",
+                "Diagnóstico: 1",
+              ]}
+              highlighted
+            />
+
+            <PricingCard
+              title="Plano Básico"
+              price="R$50,00"
+              features={[
+                "Startups: 1",
+                "Produtos por Startup: 1",
+                "Experimentação: 1",
+                "Diagnóstico: 1",
+              ]}
             />
           </div>
         </div>
+
+        <footer className="w-full p-12">
+          <div className="flex flex-col gap-6">
+            <ContactInput />
+          </div>
+        </footer>
       </main>
     </>
   );
