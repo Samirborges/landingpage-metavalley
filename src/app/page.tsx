@@ -11,9 +11,11 @@ import { Hourglass, BarChart, Compass } from "lucide-react";
 import PricingCard from "@/components/ui/PricingCard";
 import ContactInput from "@/components/shared/ContactInput";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
+import { usePageLeave } from "@/hooks/usePageLeave";
 
 export default function Home() {
   useScrollTracking();
+  usePageLeave();
   return (
     <>
       <Navbar />
