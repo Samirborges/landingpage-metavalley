@@ -1,5 +1,6 @@
 import { ANALYTICS_CONTEXT } from "@/constants/analytics";
 import posthog from "@/lib/posthog";
+import Link from "next/link";
 
 interface PricingCardProps {
   title: string;
@@ -37,16 +38,20 @@ export default function PricingCard({
       </div>
 
       {/* BOTÃO */}
-      <button
+      <Link
+        href="https://tally.so/r/2E1kvM?location=payment_intent"
+        rel="noopener noreferrer"
+        // Movemos todas as classes do button para o Link
         className={`
           rounded-xl py-3 font-semibold transition-all duration-300 border cursor-pointer 
-          
+          text-center inline-block w-full
           ${
             highlighted
               ? "bg-white text-black border-white hover:bg-transparent hover:text-white"
               : "bg-transparent text-white border-white hover:bg-white hover:text-black"
           }
         `}
+        // O evento de track continua funcionando no clique do Link
         onClick={() =>
           posthog.capture("payment_intent", {
             ...ANALYTICS_CONTEXT,
@@ -56,7 +61,7 @@ export default function PricingCard({
         }
       >
         Começar agora
-      </button>
+      </Link>
     </div>
   );
 }
