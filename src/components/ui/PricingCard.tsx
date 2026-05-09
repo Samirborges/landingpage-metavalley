@@ -1,4 +1,5 @@
-import posthog from "posthog-js";
+import { ANALYTICS_CONTEXT } from "@/constants/analytics";
+import posthog from "@/lib/posthog";
 
 interface PricingCardProps {
   title: string;
@@ -47,8 +48,9 @@ export default function PricingCard({
           }
         `}
         onClick={() =>
-          posthog.capture("conversion", {
-            type: "pricing_click",
+          posthog.capture("payment_intent", {
+            ...ANALYTICS_CONTEXT,
+            type: "payment_intent",
             plan: typePlan,
           })
         }

@@ -12,10 +12,11 @@ import PricingCard from "@/components/ui/PricingCard";
 import ContactInput from "@/components/shared/ContactInput";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
 import { usePageLeave } from "@/hooks/usePageLeave";
+import { ANALYTICS_CONTEXT } from "@/constants/analytics";
 
 export default function Home() {
   useScrollTracking();
-  usePageLeave();
+  usePageLeave(ANALYTICS_CONTEXT);
   return (
     <>
       <Navbar />

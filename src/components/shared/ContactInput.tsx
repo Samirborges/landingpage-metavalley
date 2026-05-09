@@ -1,7 +1,8 @@
 "use client";
 
+import { ANALYTICS_CONTEXT } from "@/constants/analytics";
 import { Send } from "lucide-react";
-import posthog from "posthog-js";
+import posthog from "@/lib/posthog";
 import { useState } from "react";
 
 export default function ContactInput() {
@@ -28,8 +29,10 @@ export default function ContactInput() {
         <button
           onClick={() => {
             handleSend();
-            posthog.capture("conversion", {
+            posthog.capture("lead_contact", {
               type: "lead",
+              ...ANALYTICS_CONTEXT,
+              location: "contact_input",
             });
           }}
           className="p-2 rounded-full hover:bg-gray-200 transition cursor-pointer"

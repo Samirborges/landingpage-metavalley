@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import posthog from "@/lib/posthog";
+import { ANALYTICS_CONTEXT } from "@/constants/analytics";
 
 export function useScrollTracking() {
   useEffect(() => {
@@ -19,6 +20,8 @@ export function useScrollTracking() {
 
           posthog.capture("scroll_depth", {
             percentage: t,
+            ...ANALYTICS_CONTEXT,
+            location: "home_page",
           });
         }
       });
