@@ -17,12 +17,13 @@ import { ANALYTICS_CONTEXT } from "@/constants/analytics";
 export default function Home() {
   useScrollTracking();
   usePageLeave(ANALYTICS_CONTEXT);
+
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white flex flex-col items-center justify-center  ">
-        <div className="flex align items-center px-40 min-h-screen">
-          <div>
+      <main className="min-h-screen bg-white flex flex-col items-center">
+        <section className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-20 lg:px-40 pt-32 pb-20 min-h-screen gap-12 w-full max-w-[1440px]">
+          <div className="flex-1 text-center lg:text-left">
             <div className="max-w-4xl mb-8">
               <SplitText
                 text="Descubra se o seu negócio pode gerar receita em até 7 dias! – Antes de perder meses construindo algo inútil"
@@ -36,37 +37,46 @@ export default function Home() {
                     "bg-gradient-to-r from-[#ff3131] to-[#ff914d] bg-clip-text text-transparent",
                 }}
               />
-              <p className="mt-6 text-[#002c2b] text-lg  mx-auto animate-fade-in">
+              <p className="mt-6 text-[#002c2b] text-lg md:text-xl animate-fade-in">
                 Validamos sua ideia com pessoas reais e mostramos exatamente o
-                que funciona, o que não funcioa e o que ajustar.
+                que funciona, o que não funciona e o que ajustar.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-6 items-center">
-              <GlowButton text="Quero validar a minha ideia" />
-              <SpotlightButton text="Saber mais" />
+
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
+              <div className="w-full sm:w-auto">
+                <GlowButton text="Quero validar a minha ideia" />
+              </div>
+              <div className="w-full sm:w-auto">
+                <SpotlightButton text="Saber mais" />
+              </div>
             </div>
           </div>
-          {/* Como adicionar uma imagem bem aqui? */}
-          <div className="mt-8">
-            <Image
-              src="/img/metavalley.png"
-              alt="MetaValley - Validação de ideias"
-              width={800}
-              height={500}
-            />
+
+          {/* Imagem do Hero - Ajustada para sumir ou diminuir conforme necessário */}
+          <div className="flex-1 w-full flex justify-center lg:justify-end animate-fade-in">
+            <div className="relative w-full max-w-[600px] aspect-video lg:aspect-square">
+              <Image
+                src="/img/metavalley.png"
+                alt="MetaValley - Validação de ideias"
+                width={800}
+                height={600}
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
-        </div>
+        </section>
 
-        {/* Descrição do problema */}
-
-        <div className="text-center bg-[#131316] w-full py-12">
+        {/* CONTAINER PRETO (Seções de Problema, Solução e Planos) */}
+        <div className="text-center bg-[#131316] w-full py-20">
+          {/* Seção de Problema */}
           <PillButton
             text="O Problema"
             fromColor="from-[#ff3131]"
             toColor="to-[#ff914d]"
           />
-
-          <div className="flex px-10 mt-12 gap-8 justify-center flex-wrap mb-12">
+          <div className="flex px-6 md:px-10 mt-12 gap-8 justify-center flex-wrap mb-20">
             <FeatureCard
               title="Perdeu meses construindo algo inútil"
               description="Sem realizar uma análise detalhada do mercado você criou produtos não são capazes de gerar receita."
@@ -87,28 +97,23 @@ export default function Home() {
             />
           </div>
 
-          {/* Descrição da solução */}
-
           <PillButton
             text="Sua Solução"
             fromColor="from-[#5de0e6]"
             toColor="to-[#004aad]"
           />
-
-          <h3 className="mt-12 mb-12 font-radio text-xl sm:text-2xl font-bold px-6 sm:px-12 md:px-32 lg:px-60">
+          <h3 className="mt-12 mb-20 text-white font-radio text-2xl md:text-3xl font-bold px-6 md:px-32 lg:px-60 leading-tight">
             Transformamos sua ideia em um experimento real, coleta dados de
             comportamento e te entrega um diagnóstico claro para tomar decisão.
           </h3>
 
-          {/* Descrição de como funciona */}
-
+          {/* Seção Como Funciona */}
           <PillButton
             text="Como Funciona"
             fromColor="from-[#5de0e6]"
             toColor="to-[#ccff00]"
           />
-
-          <div className="flex px-10 gap-8 justify-center flex-wrap mt-12 mb-12">
+          <div className="flex px-6 md:px-10 gap-8 justify-center flex-wrap mt-12 mb-20">
             <FeatureCard
               title="Você define a sua ideia e estruturamos ela"
               description="Estruturamos sua hipótese de forma clara e testável."
@@ -132,13 +137,13 @@ export default function Home() {
             />
           </div>
 
+          {/* Seção de planos */}
           <PillButton
             text="Planos"
             fromColor="from-[#5de0e6]"
             toColor="to-[#ccff00]"
           />
-
-          <div className="flex px-10 gap-8 justify-center flex-wrap mt-12">
+          <div className="flex px-6 md:px-10 gap-8 justify-center flex-wrap mt-12">
             <PricingCard
               title="Plano Básico"
               price="R$50,00"
@@ -178,8 +183,8 @@ export default function Home() {
           </div>
         </div>
 
-        <footer className="w-full p-12">
-          <div className="flex flex-col gap-6">
+        <footer className="w-full py-20 px-6">
+          <div className="max-w-4xl mx-auto">
             <ContactInput />
           </div>
         </footer>
