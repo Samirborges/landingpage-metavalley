@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased ${radioCanadaBig.variable} bg-black`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased ${radioCanadaBig.variable} bg-black scroll-smooth`}
     >
       <head>
         <link rel="stylesheet" href="https://googleapis.com" />

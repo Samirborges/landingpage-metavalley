@@ -13,6 +13,7 @@ import ContactInput from "@/components/shared/ContactInput";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
 import { usePageLeave } from "@/hooks/usePageLeave";
 import { ANALYTICS_CONTEXT } from "@/constants/analytics";
+import Link from "next/link";
 
 export default function Home() {
   useScrollTracking();
@@ -48,7 +49,9 @@ export default function Home() {
                 <GlowButton text="Quero validar a minha ideia" />
               </div>
               <div className="w-full sm:w-auto">
-                <SpotlightButton text="Saber mais" />
+                <Link href="#produto" className="w-full sm:auto">
+                  <SpotlightButton text="Saber mais" />
+                </Link>
               </div>
             </div>
           </div>
@@ -71,31 +74,33 @@ export default function Home() {
         {/* CONTAINER PRETO (Seções de Problema, Solução e Planos) */}
         <div className="text-center bg-[#131316] w-full py-20">
           {/* Seção de Problema */}
-          <PillButton
-            text="O Problema"
-            fromColor="from-[#ff3131]"
-            toColor="to-[#ff914d]"
-          />
-          <div className="flex px-6 md:px-10 mt-12 gap-8 justify-center flex-wrap mb-20">
-            <FeatureCard
-              title="Perdeu meses construindo algo inútil"
-              description="Sem realizar uma análise detalhada do mercado você criou produtos não são capazes de gerar receita."
-              icon={Hourglass}
-              iconColor="#ff3131"
+          <section id="produto" className="max-w-7xl mx-auto">
+            <PillButton
+              text="O Problema"
+              fromColor="from-[#ff3131]"
+              toColor="to-[#ff914d]"
             />
-            <FeatureCard
-              title="Não soube interpretar dados para tomada de decisão"
-              description="Ao visualizar métricas de suas campanhas, você não soube definir qual era o problema da sua proposta de valor?"
-              icon={BarChart}
-              iconColor="#ff3131"
-            />
-            <FeatureCard
-              title="Não sabe qual próximo passo dar no seu negócio"
-              description="Você não sabe qual a melhor decisão tomar para que seu negócio comece a ter prospecção de clientes"
-              icon={Compass}
-              iconColor="#ff3131"
-            />
-          </div>
+            <div className="flex px-6 md:px-10 mt-12 gap-8 justify-center flex-wrap mb-20">
+              <FeatureCard
+                title="Perdeu meses construindo algo inútil"
+                description="Sem realizar uma análise detalhada do mercado você criou produtos não são capazes de gerar receita."
+                icon={Hourglass}
+                iconColor="#ff3131"
+              />
+              <FeatureCard
+                title="Não soube interpretar dados para tomada de decisão"
+                description="Ao visualizar métricas de suas campanhas, você não soube definir qual era o problema da sua proposta de valor?"
+                icon={BarChart}
+                iconColor="#ff3131"
+              />
+              <FeatureCard
+                title="Não sabe qual próximo passo dar no seu negócio"
+                description="Você não sabe qual a melhor decisão tomar para que seu negócio comece a ter prospecção de clientes"
+                icon={Compass}
+                iconColor="#ff3131"
+              />
+            </div>
+          </section>
 
           <PillButton
             text="Sua Solução"
@@ -138,55 +143,57 @@ export default function Home() {
           </div>
 
           {/* Seção de planos */}
-          <PillButton
-            text="Planos"
-            fromColor="from-[#5de0e6]"
-            toColor="to-[#ccff00]"
-          />
-          <div className="flex px-6 md:px-10 gap-8 justify-center flex-wrap mt-12">
-            <PricingCard
-              title="Plano Básico"
-              price="R$50,00"
-              features={[
-                "Startups: 1",
-                "Produtos por Startup: 1",
-                "Experimentação: 1",
-                "Diagnóstico: 1",
-              ]}
-              typePlan="basic"
+          <section id="checkout" className="scroll-mt-24 mt-20">
+            <PillButton
+              text="Planos"
+              fromColor="from-[#5de0e6]"
+              toColor="to-[#ccff00]"
             />
-
-            <PricingCard
-              title="Plano Pro"
-              price="R$50,00"
-              features={[
-                "Startups: 1",
-                "Produtos por Startup: 1",
-                "Experimentação: 1",
-                "Diagnóstico: 1",
-              ]}
-              typePlan="pro"
-              highlighted
-            />
-
-            <PricingCard
-              title="Plano Básico"
-              price="R$50,00"
-              features={[
-                "Startups: 1",
-                "Produtos por Startup: 1",
-                "Experimentação: 1",
-                "Diagnóstico: 1",
-              ]}
-              typePlan="enterprise"
-            />
-          </div>
+            <div className="flex px-6 md:px-10 gap-8 justify-center flex-wrap mt-12">
+              <PricingCard
+                title="Plano Básico"
+                price="R$50,00"
+                features={[
+                  "Startups: 1",
+                  "Produtos por Startup: 1",
+                  "Experimentação: 1",
+                  "Diagnóstico: 1",
+                ]}
+                typePlan="basic"
+              />
+              <PricingCard
+                title="Plano Pro"
+                price="R$50,00"
+                features={[
+                  "Startups: 1",
+                  "Produtos por Startup: 1",
+                  "Experimentação: 1",
+                  "Diagnóstico: 1",
+                ]}
+                typePlan="pro"
+                highlighted
+              />
+              <PricingCard
+                title="Plano Básico"
+                price="R$50,00"
+                features={[
+                  "Startups: 1",
+                  "Produtos por Startup: 1",
+                  "Experimentação: 1",
+                  "Diagnóstico: 1",
+                ]}
+                typePlan="enterprise"
+              />
+            </div>
+          </section>
         </div>
 
         <footer className="w-full py-20 px-6">
-          <div className="max-w-4xl mx-auto">
-            <ContactInput />
-          </div>
+          <section id="contato" className="scroll-mt-24">
+            <div className="max-w-4xl mx-auto">
+              <ContactInput />
+            </div>
+          </section>
         </footer>
       </main>
     </>

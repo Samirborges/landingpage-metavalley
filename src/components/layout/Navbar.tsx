@@ -41,11 +41,6 @@ export const Navbar = () => {
         </div>
 
         {/* BOTÃO DESKTOP */}
-        <div className="hidden md:block">
-          <button className="text-sm font-bold text-black bg-gradient-to-r from-[#80dbdd] to-[#b5ed7f] px-4 py-2 rounded-full">
-            Login
-          </button>
-        </div>
 
         {/* BOTÃO MOBILE */}
         <button onClick={() => setOpen(!open)} className="md:hidden text-white">
@@ -68,10 +63,6 @@ export const Navbar = () => {
             <Link href="#contato" onClick={() => setOpen(false)}>
               Contato
             </Link>
-
-            <button className="mt-4 text-black font-bold bg-gradient-to-r from-[#80dbdd] to-[#b5ed7f] px-4 py-2 rounded-full">
-              Login
-            </button>
           </div>
         </div>
       )}
