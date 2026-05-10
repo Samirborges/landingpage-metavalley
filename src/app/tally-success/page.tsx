@@ -33,11 +33,11 @@ export default function TallySuccessPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold mb-4 text-gray-400">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 text-center">
+      <h1 className="text-2xl md:text-4xl font-bold mb-4 text-gray-400 leading-tight">
         Obrigado por se inscrever! 🎉
       </h1>
-      <p className="text-lg text-gray-600 mb-8">
+      <p className="text-base md:text-lg text-gray-600 max-w-md">
         Sua inscrição foi recebida com sucesso. Em breve, entraremos em contato
         com mais detalhes.
       </p>
