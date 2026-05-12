@@ -151,36 +151,36 @@ export default function Home() {
             />
             <div className="flex px-6 md:px-10 gap-8 justify-center flex-wrap mt-12">
               <PricingCard
-                title="Plano Básico"
-                price="R$50,00"
+                title="SIGNAL"
+                price="R$97,00"
                 features={[
-                  "Startups: 1",
-                  "Produtos por Startup: 1",
-                  "Experimentação: 1",
-                  "Diagnóstico: 1",
+                  "Diagnóstico inicial",
+                  "Construção de 1 experimento",
+                  "Tracking comportamental",
+                  "Relatório final",
                 ]}
                 typePlan="basic"
               />
               <PricingCard
-                title="Plano Pro"
-                price="R$50,00"
+                title="VALIDATE"
+                price="R$497,00"
                 features={[
-                  "Startups: 1",
-                  "Produtos por Startup: 1",
-                  "Experimentação: 1",
-                  "Diagnóstico: 1",
+                  "Múltiplas hipóteses",
+                  "Construção de 2 experimentos",
+                  "Diagnóstico aprofundado",
+                  "Reunião estratégica",
                 ]}
                 typePlan="pro"
                 highlighted
               />
               <PricingCard
-                title="Plano Básico"
-                price="R$50,00"
+                title="VECTOR"
+                price="R$2.000,00"
                 features={[
-                  "Startups: 1",
-                  "Produtos por Startup: 1",
-                  "Experimentação: 1",
-                  "Diagnóstico: 1",
+                  "Ciclo contínuo de experimentação",
+                  "Dashboard de comportamento",
+                  "Diagnóstico contínuo",
+                  "Prioridade estratégica",
                 ]}
                 typePlan="enterprise"
               />

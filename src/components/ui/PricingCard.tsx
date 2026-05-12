@@ -26,11 +26,11 @@ export default function PricingCard({
 
           <p className="text-white text-3xl font-bold mb-6">{price}</p>
 
-          <ul className="space-y-2 text-gray-400">
+          <ul className="space-y-2 text-gray-400 text-left">
             {features.map((feature, index) => (
-              <li key={index} className="flex items-center gap-2">
+              <li key={index} className="flex items-start gap-2">
                 <span className="text-gray-500">•</span>
-                {feature}
+                <span className="text-sm leading-relaxed">{feature}</span>
               </li>
             ))}
           </ul>
