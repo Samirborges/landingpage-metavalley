@@ -33,7 +33,7 @@ export const Navbar = () => {
             Checkout
           </Link>
           <Link
-            href="#contato"
+            href="https://tally.so/r/q4o6BO"
             className="text-sm text-gray-400 hover:text-[#b5ed7f]"
           >
             Contato

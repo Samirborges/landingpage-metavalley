@@ -9,7 +9,6 @@ import PillButton from "@/components/shared/PillButton";
 import FeatureCard from "@/components/shared/FeatureCard";
 import { Hourglass, BarChart, Compass } from "lucide-react";
 import PricingCard from "@/components/ui/PricingCard";
-import ContactInput from "@/components/shared/ContactInput";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
 import { usePageLeave } from "@/hooks/usePageLeave";
 import { ANALYTICS_CONTEXT } from "@/constants/analytics";
@@ -190,9 +189,9 @@ export default function Home() {
 
         <footer className="w-full py-20 px-6">
           <section id="contato" className="scroll-mt-24">
-            <div className="max-w-4xl mx-auto">
-              <ContactInput />
-            </div>
+            <h3 className="text-center text-black font-bold text-lg md:text-xl">
+              MetaValley is the new Silicon Valley
+            </h3>
           </section>
         </footer>
       </main>
