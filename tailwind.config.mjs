@@ -7,8 +7,12 @@ const config = {
   ],
   theme: {
     extend: {
-      fontFamly: {
-        radio: ['var(--font-radio-canada)', 'sans-serif'],
+      fontFamily: {
+        radio: ['var(--font-radio-canada-big)', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
+        roboto: ['var(--font-roboto)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        'google-sans': ['"Google Sans"', 'sans-serif'],
       },
       colors: {
         mv_black: '#0a0a0a',      // Fundo principal [cite: 5, 41]

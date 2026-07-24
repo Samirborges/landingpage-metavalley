@@ -1,34 +1,30 @@
 interface PillButtonProps {
   text: string;
-  fromColor: string;
-  toColor: string;
+  fromColor?: string;
+  toColor?: string;
+  textColor?: string;
 }
 
 export default function PillButton({
   text,
   fromColor,
   toColor,
+  textColor,
 }: PillButtonProps) {
   return (
-    <div className="rounded-full w-[20rem] bg-gradient-to-b from-[#6c6f72] via-[#212423] to-[#000000] inline-block p-1 hover:scale-105 active:scale-95">
-      <button
-        className="
-          cursor-pointer
-          relative px-8 py-4 rounded-full font-bold text-xl
-          bg-gradient-to-r from-[#6c6f72] via-[#212423] to-[#000000] inline-block
-          transition-all 
-          w-full
-        "
+    <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+      <span
+        className={`
+          text-sm font-medium tracking-wide
+          ${
+            textColor
+              ? textColor
+              : `bg-gradient-to-r bg-clip-text text-transparent ${fromColor} ${toColor}`
+          }
+        `}
       >
-        <span
-          className={`
-            bg-gradient-to-r bg-clip-text text-transparent  /* Truque para texto em degradê */
-            ${fromColor} ${toColor}
-          `}
-        >
-          {text}
-        </span>
-      </button>
+        {text}
+      </span>
     </div>
   );
 }
